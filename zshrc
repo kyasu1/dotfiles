@@ -107,3 +107,26 @@ source '/Users/yako/google-cloud-sdk/path.zsh.inc'
 source '/Users/yako/google-cloud-sdk/completion.zsh.inc'
 
 code () {VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $*}
+
+# Mac Vim Command line settings
+case "$(uname)" in
+  Darwin)
+    if [[ -d /Applications/MacVim.app ]]; then
+      PATH="/Applications/MacVim.app/Contents/MacOS:$PATH"
+    fi
+    ;;
+  *) ;;
+esac
+
+case "$(uname)" in
+  Darwin)
+    if [[ -d /Applications/MacVim.app ]]; then
+      alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+      alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+      alias vimdiff=/Applications/MacVim.app/Contents/MacOS/vimdiff
+      alias view=/Applications/MacVim.app/Contents/MacOS/view
+    fi
+    ;;
+  *) ;;
+esac
+
