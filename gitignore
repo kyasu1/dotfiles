@@ -1,0 +1,5 @@
+#ln -sf dotfiles/gitignore ~/.gitignore
+#git config --global core.excludesfile ~/.gitignore
+*~
+*.swp
+*.swo
