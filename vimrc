@@ -23,3 +23,15 @@ let g:syntastic_check_on_wq = 0
 "npm install -g eslint babel-eslint eslint-plugin-react
 let g:syntastic_javascript_checkers = ['eslint']
 
+" swap file in a common location
+" http://stackoverflow.com/questions/23703923/gitignore-is-not-ignoring-my-vim-temporary-files
+set dir=~/.vim/_swap//
+
+" back files (~) in a common location if possible
+set backup
+set backupdir=~/.vim/_backup/,~/tmp,.
+
+" turn on undo file, put them in a common location
+set undofile
+set undodir=~/.vim/_undo/
+
