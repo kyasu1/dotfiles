@@ -5,9 +5,11 @@ set softtabstop=0
 set expandtab
 
 "Pathogen"
+"mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LSso ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
 execute pathogen#infect()
 
 "Syntastic"
+"cd ~/.vim/bundle && git clone https://github.com/scrooloose/syntastic.git
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -18,5 +20,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 "ESLint"
+"npm install -g eslint babel-eslint eslint-plugin-react
 let g:syntastic_javascript_checkers = ['eslint']
 
